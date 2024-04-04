@@ -1,10 +1,16 @@
 import { createRoot } from "react-dom/client"
+import Boxes from "./Boxes";
+import { useState } from "react";
+import WidthContext from "./widthContext";
+
+
 const App = () => {
+    const tableWidth = useState(400);
     return (
         <div>
-            <h1>Welp. Looks empty in here.</h1>
-            <h2>Have a cat.</h2>
-            <img src="https://elmercio.com/wp-content/uploads/2015/07/gato-hacker-cat-computer-computadora.jpg" alt="haxxor cat" id="cat" />
+            <WidthContext.Provider value={tableWidth}>
+                <Boxes />
+            </WidthContext.Provider>
         </div>
     );
 };
